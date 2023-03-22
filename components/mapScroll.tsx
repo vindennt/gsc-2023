@@ -1,20 +1,38 @@
-import { Stack, HStack, VStack, Box, Text, Container } from '@chakra-ui/react'
-import axios from 'axios';
+import { Stack, HStack, VStack, Box, Text, Container, Link } from '@chakra-ui/react'
 import data from '../data/richmonddata.json';
 
 
 const ScrollItem = ({ children, ...props }) => {
     return (
-      <Box
+      <Container
         p={2}
         boxShadow='outline'
         {...props}
       >
         {children}
-      </Box>
+      </Container>
     );
   };
 
+const parsed = data.response.collection;
+
+console.log(data);
+
+export default function MapScroll() {
+    return (
+    <Box height="50vh" width="100%">
+        <VStack width="100%">
+        {parsed.map((parsed) => (
+            <ScrollItem>
+              {parsed.name + ", "}
+              {parsed.address1 + ", "}
+              <Link href={parsed.url}>{parsed.url}</Link>
+            </ScrollItem>
+          ))}
+        </VStack>
+    </Box>
+    )
+}
 
 // const Locations = [
 //     { name: "X Depot", address: "1234 Sesame Street"},
@@ -28,9 +46,6 @@ const ScrollItem = ({ children, ...props }) => {
 //     { name: "Z Depot", address: "3234 Sesame Street"},
 // ];
 
-const parsed = data.response.collection;
-
-console.log(data);
 // // let url = "https://hosted.where2getit.com/call2recycle/2016/rest/locatorsearch?like=0.383707874261493&lang=en_US";
 // fetch("https://hosted.where2getit.com/call2recycle/2016/rest/locatorsearch?like=0.383707874261493&lang=en_US", {
 //     "headers": {
@@ -61,18 +76,3 @@ console.log(data);
 //   .then(response => console.log(response.data))
 //   .catch(error => console.error(error))
 
-
-export default function MapScroll() {
-    return (
-    <Container alignItems="baseline" height="300px" width="400px">
-        <VStack width="100%">
-        {parsed.map((parsed) => (
-            <ScrollItem>
-              {parsed.name}
-              {parsed.address1}
-            </ScrollItem>
-          ))}
-        </VStack>
-    </Container>
-    )
-}
