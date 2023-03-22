@@ -1,3 +1,4 @@
+
 import { Box, Container, Flex, Text, Stack, Center} from '@chakra-ui/react'
 import { VStack, StackDivider, HStack } from '@chakra-ui/react'
 import MapScroll from '../components/mapScroll'
