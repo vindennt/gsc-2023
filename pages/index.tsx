@@ -12,11 +12,8 @@ const Home = () => {
   return (
     <>
       <Heading>
-        <MapScroll/>
+        <MapScroll />
       </Heading>
-      <Link href="/Map">
-        <Text>View Map</Text>
-      </Link>
 
       <Map />
     </>
