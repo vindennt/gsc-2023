@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import data from '../data/richmonddata.json'
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import 'leaflet/dist/leaflet.css';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import ReactDOMServer from 'react-dom/server';
 
