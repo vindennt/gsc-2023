@@ -3,35 +3,35 @@ import data from '../data/richmonddata.json';
 
 
 const ScrollItem = ({ children, ...props }) => {
-    return (
-      <Container
-        p={2}
-        boxShadow='outline'
-        {...props}
-      >
-        {children}
-      </Container>
-    );
-  };
+  return (
+    <Container
+      p={2}
+      boxShadow='outline'
+      {...props}
+    >
+      {children}
+    </Container>
+  );
+};
 
 const parsed = data.response.collection;
 
 console.log(data);
 
 export default function MapScroll() {
-    return (
-    <Box height="50vh" width="100%">
-        <VStack width="100%">
+  return (
+    <Box height="100vh" width="100%">
+      <Stack>
         {parsed.map((parsed) => (
-            <ScrollItem>
-              {parsed.name + ", "}
-              {parsed.address1 + ", "}
-              <Link href={parsed.url}>{parsed.url}</Link>
-            </ScrollItem>
-          ))}
-        </VStack>
+          <ScrollItem>
+            {parsed.name + ", "}
+            {parsed.address1 + ", "}
+            <Link href={parsed.url}>{parsed.url}</Link>
+          </ScrollItem>
+        ))}
+      </Stack>
     </Box>
-    )
+  )
 }
 
 // const Locations = [
