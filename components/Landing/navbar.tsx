@@ -23,21 +23,25 @@ const NavLink = ({
 }
 const Navbar = () => {
     return (
-        <Stack
-            w="100%"
+        <Container
+            maxW="container.lg"
+            p={6}
+            display="flex"
+            justifyContent="space-between"
             backgroundColor="#FFF6D6"
         >
-            <Container maxW="container.xl" py={6} display="flex" justifyContent="space-between">
-                <Box>
-                    Logo
-                </Box>
 
-                <Stack direction="row" spacing={12}>
-                    <NavLink title="Shop" icon={<AiOutlineShopping />} />
-                    <NavLink title="Search" icon={<AiOutlineSearch />} />
-                </Stack>
-            </Container>
-        </Stack>
+            <Box>
+                Logo
+            </Box>
+
+            <Stack direction="row" display="flex" alignSelf="right" justify="flex-end" spacing={12}>
+                <NavLink title="Shop" icon={<AiOutlineShopping />} />
+                <NavLink title="Search" icon={<AiOutlineSearch />} />
+            </Stack>
+
+
+        </Container>
     )
 }
 

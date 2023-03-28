@@ -15,6 +15,9 @@ const customIcon = L.divIcon({
     popupAnchor: [0, -24]
 });
 
+const parsedData = data.response.collection;
+
+
 
 
 
