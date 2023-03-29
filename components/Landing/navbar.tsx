@@ -46,7 +46,7 @@ const Navbar = () => {
             p={6}
             display="flex"
             justifyContent="space-between"
-            backgroundColor="#FFF6D6"
+            backgroundColor="#FFF9F2"
         >
             <Link href="/">
                 <Box>

@@ -11,7 +11,7 @@ const Landing = () => {
 	return (
 		<>
 			<Flex
-				backgroundColor="#FFF6D6"
+				backgroundColor="#FFF9F2"
 				minH="100vh"
 				alignItems="center"
 				justifyContent="center"

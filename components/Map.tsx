@@ -20,9 +20,6 @@ const parsedData = data.response.collection;
 
 
 
-
-
-
 const Map = () => {
     const position = [49.2827, -123.1207];
     const parsed = data.response.collection;
@@ -38,9 +35,6 @@ const Map = () => {
             marker.bindPopup(item.name); // set the popup content to the item name
             return marker;
         });
-
-
-
 
 
         markers.forEach(function (marker) {
