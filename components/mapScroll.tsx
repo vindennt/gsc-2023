@@ -21,8 +21,6 @@ const ScrollItem = ({ children, ...props }) => {
 };
 
 
-
-
 const MapScroll = () => {
   const [markers, setMarkers] = useState([]);
 
@@ -45,8 +43,6 @@ const MapScroll = () => {
     // Set the markers in state
     setMarkers(newMarkers);
   }, []);
-
-
 
 
   // const handleOnClick = (marker: any) => {
