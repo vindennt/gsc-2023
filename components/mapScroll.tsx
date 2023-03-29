@@ -6,7 +6,7 @@ import ReactDOMServer from 'react-dom/server';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
-import data from '../data/richmonddata.json';
+import data from '../data/vancouverData.json';
 
 const ScrollItem = ({ children, ...props }) => {
   return (
@@ -75,6 +75,7 @@ const MapScroll = () => {
           <ScrollItem key={item.id} onClick={() => handleOnClick(item.marker)}>
             <Text fontWeight="bold">{item.name}</Text>
             <Text>{item.address1}</Text>
+            <Text>{item.address2 ? item.address2 : ""}</Text>
             <Link href={item.url} isExternal>
               {item.url}
             </Link>
