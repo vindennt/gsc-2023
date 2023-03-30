@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { Stack, HStack, VStack, Box, Text, Container, Link, Icon } from '@chakra-ui/react'
+import { Stack, HStack, VStack, Box, Text, Container, Link, Icon, Button } from '@chakra-ui/react'
 import React from 'react';
 import { useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaDirections } from 'react-icons/fa';
 
 
 import data from '../data/vancouverData.json';
@@ -64,21 +64,31 @@ const MapScroll = () => {
     }
   }
 
-
+  // const googleMapLink = `http://www.google.com/maps/place/${item.latitude},${item.longitude}`
   const parsedData = data.response.collection;
-
 
   return (
     <Box height="100vh" width="100%" p={4}>
       <Stack>
         {parsedData.map((item) => (
+
           <ScrollItem key={item.id} onClick={() => handleOnClick(item.marker)}>
             <Text fontWeight="bold">{item.name}</Text>
-            <Text>{item.address1}</Text>
-            <Text>{item.address2 ? item.address2 : ""}</Text>
-            <Link href={item.url} isExternal>
+            <Text fontSize="sm">{item.address1}</Text>
+            <Text fontSize="sm">{item.address2 ? item.address2 : ""}</Text>
+            <Text fontSize="sm">{item.city}, {item.province} {item.postalcode}</Text>
+            <Link color="blue.500" fontSize="sm" href={item.url} isExternal>
               {item.url}
             </Link>
+
+            <Box>
+              <a href={`https://www.google.com/maps/search/?api=1&query=${item.latitude},${item.longitude}`}
+              target="_blank">
+              <Button leftIcon={<FaDirections />} colorScheme="green" aria-label="directions" variant="outline">
+                Get directions
+              </Button>
+              </a>
+            </Box>
           </ScrollItem>
         ))}
       </Stack>

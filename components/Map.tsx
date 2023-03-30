@@ -28,15 +28,23 @@ const Map = () => {
 
     function AddMarkersToMap() {
         const map = useMap();
+        
 
         const markers = parsed.map(function (item) {
+            const link = `https://www.google.com/maps/search/?api=1&query=${item.latitude},${item.longitude}`;
             const lat = parseFloat(item.latitude);
             const lng = parseFloat(item.longitude);
             const marker = L.marker([lat, lng], { icon: customIcon });
             //marker.bindPopup(item.name); // set the popup content to the item name
             marker.bindPopup(
-                item.url ? `${item.name}</br>${item.address1}</br><a href=${item.url}>${item.url}</a>`
-                : `${item.name}</br>${item.address1}`);
+                item.url ? `<strong>${item.name}</strong></br>${item.address1}</br><a href=${item.url}>${item.url}</a>
+                <br/>
+                <a href=${link}
+                 target="_blank">Get directions<a>`
+                : `<strong>${item.name}</strong></br>${item.address1} ${item.postalcode}
+                <br/>
+                <a href=link
+                 target="_blank">Get directions<a>`);
             return marker;
         });
 
