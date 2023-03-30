@@ -1,6 +1,6 @@
 
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import data from '../data/vancouverData.json'
+import data from '../data/lowerMainlandData.json'
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -45,6 +45,7 @@ const Map = () => {
                 <br/>
                 <a href=link
                  target="_blank">Get directions<a>`);
+
             return marker;
         });
 

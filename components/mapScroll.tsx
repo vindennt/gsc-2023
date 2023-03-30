@@ -6,7 +6,7 @@ import ReactDOMServer from 'react-dom/server';
 import { FaMapMarkerAlt, FaDirections } from 'react-icons/fa';
 
 
-import data from '../data/vancouverData.json';
+import data from '../data/lowerMainlandData.json';
 
 const ScrollItem = ({ children, ...props }) => {
   return (
