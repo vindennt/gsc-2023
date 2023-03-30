@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <Center>
-        <Box w="100%" h="100vh" overflow="hidden">
+        <Box w="100%" h="97vh" overflow="hidden">
           <Flex alignItems="center">
             <Box overflowY="auto">
               <MapScroll />

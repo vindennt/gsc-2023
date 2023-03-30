@@ -12,12 +12,14 @@ const Card = ({
     subtitle,
     title,
     content,
+    link
 }: {
     title: string,
     subtitle: string,
     content: string,
     color: string,
     icon: React.ReactNode
+    link: string,
 }) => {
     return (
         <Box
@@ -36,7 +38,7 @@ const Card = ({
             cursor="pointer"
             transition="all .2s"
         >
-            <Link href="/mapping">
+            <Link href={link}>
                 <Stack gap={1}>
                     {icon}
                     <Text color={color} fontWeight="bold">

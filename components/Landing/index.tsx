@@ -22,26 +22,28 @@ const Landing = () => {
 			>
 				<Container maxW="container.xl" textAlign="center">
 					<Heading fontSize="5xl" fontWeight="bold" mb={3}>
-						It's what's on the inside that counts.
+						Help make our planet greener and cleaner
 					</Heading>
-					<Text>
-						Geo location app for electronic recycling, batteries, and can. Find and buy sustainable consumables.
+					<Text fontSize={'lg'}>
+						Locate sites to properly dispose or recycle electronics and find eco-fashion that saves the planet.
 					</Text>
 
 					<SimpleGrid mt={12} columns={2} spacing={10}>
 						<Card
-							subtitle="Recycle"
-							title="What do you want to recycle"
-							content="Geo location app for electronic recycling, batteries, and can. Find and buy sustainable consumables."
+							subtitle="Locator"
+							title="Recycle responsibly"
+							content="Find the right place to responsibly dispose of your old batteries and electronics."
 							icon={<FaBatteryHalf fontSize="48px" />}
 							color="#189D65"
+							link="/mapping"
 						/>
 						<Card
-							subtitle="Buy sustainable"
-							title="What do you want to recycle"
-							content="Geo location app for electronic recycling, batteries, and can. Find and buy sustainable consumables."
+							subtitle="Gallery"
+							title="Support sustainable fashion"
+							content="The textile industry is one of the highest waste producers. Buy from sustainable clothing brands for a beautiful future."
 							icon={<FaRecycle fontSize="48px" />}
 							color="#F88215"
+							link="/shop"
 						/>
 					</SimpleGrid>
 				</Container>

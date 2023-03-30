@@ -3,17 +3,19 @@ import { useState } from 'react'
 import { Container, Stack, Flex, SimpleGrid, Heading, Text, Box, Button, Input } from '@chakra-ui/react';
 import { FaRecycle, FaBatteryHalf } from 'react-icons/fa';
 import { FiArrowRight } from 'react-icons/fi';
-import { AiOutlineShopping, AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineShopping, AiOutlineSearch, AiOutlineExclamationCircle } from 'react-icons/ai';
 import Link from 'next/link';
 
 const NavLink = ({
     title,
     icon,
     onClick,
+    link
 }: {
     title: string,
     icon: React.ReactNode
     onClick?: () => void;
+    link: string;
 }) => {
     return (
         <Stack direction="row" alignItems="center">
@@ -22,11 +24,14 @@ const NavLink = ({
                 onClick={onClick}
                 display="flex"
             >
-                {icon}
             </Box>
-            <Text >
-                {title}
-            </Text>
+            <Link href={link} >
+                <Button leftIcon={icon}
+                
+                >
+                    {title}
+                </Button>
+            </Link>
         </Stack>
     )
 }
@@ -40,23 +45,27 @@ const Navbar = () => {
     const handleSearchClose = () => {
         setIsSearchVisible(false);
     };
+
+
     return (
         <Container
             maxW="container.lg"
-            p={6}
             display="flex"
             justifyContent="space-between"
             backgroundColor="#FFF9F2"
+            marginLeft={7}
         >
-            <Link href="/">
+            <Link href="/"
+            >
                 <Box>
                     Logo
                 </Box>
             </Link>
 
-            <Stack direction="row" display="flex" alignSelf="right" justify="flex-end" spacing={12}>
-                <NavLink title="Shop" icon={<AiOutlineShopping />} />
-                <NavLink title="Search" icon={<AiOutlineSearch />} onClick={handleSearchClick} />
+            <Stack direction="row" display="flex" alignSelf="right" justify="flex-end" spacing={12} marginRight={7}>
+                <NavLink title="Mission" icon={<AiOutlineExclamationCircle />} link="/mission" />
+                <NavLink title="Shop" icon={<AiOutlineShopping />} link="/shop"/>
+                <NavLink title="Search" icon={<AiOutlineSearch />} link="" onClick={handleSearchClick} />
             </Stack>
 
             {isSearchVisible && (
