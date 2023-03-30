@@ -68,7 +68,7 @@ const MapScroll = () => {
   const parsedData = data.response.collection;
 
   return (
-    <Box height="100vh" width="100%" p={4}>
+    <Box height="100vh" width="28vh" p={4}>
       <Stack>
         {parsedData.map((item) => (
 
@@ -82,12 +82,12 @@ const MapScroll = () => {
             </Link>
 
             <Box>
-              <a href={`https://www.google.com/maps/search/?api=1&query=${item.latitude},${item.longitude}`}
+              <Link href={`https://www.google.com/maps/search/?api=1&query=${item.latitude},${item.longitude}`}
               target="_blank">
               <Button leftIcon={<FaDirections />} colorScheme="green" aria-label="directions" variant="outline">
                 Get directions
               </Button>
-              </a>
+              </Link>
             </Box>
           </ScrollItem>
         ))}
