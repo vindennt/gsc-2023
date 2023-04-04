@@ -1,0 +1,22 @@
+{
+        "shop": [
+            {
+                "name": "nathan",
+                "link": "https://www.google.ca",
+                "description": "is a lu",
+                "product-type": "humans"
+            },
+            {
+                "name": "nathan",
+                "link": "https://www.google.ca",
+                "description": "is a lu",
+                "product-type": "humans"
+            },
+            {
+                "name": "nathan",
+                "link": "https://www.google.ca",
+                "description": "is a lu",
+                "product-type": "humans"
+            }
+        ]
+}
