@@ -58,7 +58,7 @@ const Navbar = () => {
             <Link href="/"
             >
                 <Box>
-                    Logo
+                    DNJ Sustainability
                 </Box>
             </Link>
 
