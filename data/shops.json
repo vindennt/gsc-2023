@@ -1,22 +1,22 @@
 {
         "shop": [
             {
-                "name": "nathan",
+                "name": "Shop Name",
                 "link": "https://www.google.ca",
-                "description": "is a lu",
-                "product-type": "humans"
+                "description": "We sell sustainable clothes",
+                "product-type": "Fashion"
             },
             {
-                "name": "nathan",
+                "name": "Shop Name",
                 "link": "https://www.google.ca",
-                "description": "is a lu",
-                "product-type": "humans"
+                "description": "We sell sustainable clothes",
+                "product-type": "Fashion"
             },
             {
-                "name": "nathan",
+                "name": "Shop Name",
                 "link": "https://www.google.ca",
-                "description": "is a lu",
-                "product-type": "humans"
+                "description": "We sell sustainable clothes",
+                "product-type": "Fashion"
             }
         ]
 }
