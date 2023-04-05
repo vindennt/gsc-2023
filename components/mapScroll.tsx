@@ -5,12 +5,12 @@ import { useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { FaMapMarkerAlt, FaDirections } from 'react-icons/fa';
 
-
 import data from '../data/lowerMainlandData.json';
+import json from '../data/lowerMainlandData.json';
 
 const ScrollItem = ({ children, ...props }) => {
   return (
-    <Container
+    <Container backgroundColor="#FFF9F2"
       p={3}
       border="1px solid black"
       {...props}
@@ -22,7 +22,27 @@ const ScrollItem = ({ children, ...props }) => {
 
 
 const MapScroll = () => {
-  const [markers, setMarkers] = useState([]);
+  const [markers, setMarkers] = useState([]);0
+
+  const [stuff, setData] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
+  const [forceUpdate, setForceUpdate] = useState(false);
+
+
+  let parsedData = isChecked
+  ? json.response.collection.filter(item => item.city = "Vancouver")
+  : json.response.collection.filter(item => item.city = "Richmond");
+
+  useEffect(() => {
+    // Fetch data from an API or perform some other action to update the data
+    parsedData = isChecked
+  ? json.response.collection.filter(item => item.city = "Vancouver")
+  : json.response.collection.filter(item => item.city = "Richmond");
+
+    setData(data);
+  }, [forceUpdate]);
+
+
 
   useEffect(() => {
     // Initialize the L object and the custom icon here
@@ -64,19 +84,40 @@ const MapScroll = () => {
     }
   }
 
+
+  const Checkbox = () => {
+    const [isChecked, setIsChecked] = useState(false);
+
+    function handleChange() {
+      setIsChecked(prevState => !prevState);
+    }
+  
+    return (
+      <Box>
+        <input 
+          type="checkbox" 
+          checked={isChecked} 
+          onChange={handleChange} 
+        />
+        {" Vancouver"}
+      </Box>
+    );
+  };
+
   // const googleMapLink = `http://www.google.com/maps/place/${item.latitude},${item.longitude}`
-  const parsedData = data.response.collection;
+
 
   return (
     <Box height="100vh" width="35vh" p={4}>
       <Stack>
+        <Text>Filters</Text>
+        <Checkbox/>
         {parsedData.map((item) => (
-
           <ScrollItem key={item.id} onClick={() => handleOnClick(item.marker)}>
             <Text fontWeight="bold">{item.name}</Text>
             <Text fontSize="sm">{item.address1}</Text>
             <Text fontSize="sm">{item.address2 ? item.address2 : ""}</Text>
-            <Text fontSize="sm">{item.city}, {item.province} {item.postalcode}</Text>
+            <Text fontSize="sm">{item.city}, {item.prvince} {item.postalcode}</Text>
             <Link color="blue.500" fontSize="sm" href={item.url} isExternal>
               {item.url}
             </Link>
